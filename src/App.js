@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import logo from './logo.svg';
+import CardList from './components/card-list/card-list.component';
 import './App.css';
 
 class App extends Component {
@@ -42,7 +42,8 @@ class App extends Component {
           placeholder="Search monsters"
           onChange={onSearchChange}
         />
-        {filteredMonsters.map((monster, key) => <h1 key={key}>{monster.name}</h1>)}
+        {/* {filteredMonsters.map((monster, key) => <h1 key={key}>{monster.name}</h1>)} */}
+        <CardList monsters={filteredMonsters} />
       </div>
     );
   }
