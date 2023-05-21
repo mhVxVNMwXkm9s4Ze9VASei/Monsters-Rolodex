@@ -14,7 +14,8 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch("https://jsonplaceholder.typicode.com/users").then(response => response.json())
+    fetch("https://jsonplaceholder.typicode.com/users")
+      .then(response => response.json())
       .then(users => this.setState(
         () => {
           return { monsters: users };
@@ -39,7 +40,6 @@ class App extends Component {
       <div className="App">
         <h1 className="app-title">Monsters Rolodex</h1>
         <SearchBox className="monsters-search-box" onChangeHandler={onSearchChange} placeholder="Search monsters" />
-        {/* {filteredMonsters.map((monster, key) => <h1 key={key}>{monster.name}</h1>)} */}
         <CardList monsters={filteredMonsters} />
       </div>
     );
